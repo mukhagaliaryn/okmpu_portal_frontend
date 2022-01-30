@@ -1,0 +1,34 @@
+.header {
+    width: 100%;
+    background-color: #077AFF;
+    position: sticky;
+    top: 0;
+
+    .intro-header {
+        width: 1280px;
+        margin: 0 auto;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        .logo {
+            a {
+                display: block;
+                width: 120px;
+            }
+        }
+
+        .auth-user {
+            display: flex;
+
+            .user, .logout {
+                padding: 10px;
+                color: white;
+                cursor: pointer;
+            }
+
+                        
+        }
+    }
+}
