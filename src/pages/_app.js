@@ -1,4 +1,4 @@
-import '../sass/base.scss';
+import '../styles/global.css';
 import NextNprogress from 'nextjs-progressbar';
 import { Provider } from 'react-redux';
 import { useStore } from '../store';

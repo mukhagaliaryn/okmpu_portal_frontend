@@ -53,5 +53,12 @@
         "is_register": "Нет аккаунта ?",
         "enter": "Войти",
         "back": "Назад"
+    },
+
+    
+    "header": {
+        "register": "Регистрация",
+        "login": "Вход",
+        "logout-title": "Выйти"
     }
 }

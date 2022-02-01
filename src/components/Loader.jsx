@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const LoaderContainer = styled.div`
     display: inline-block;
     position: relative;
+    left: 50%;
     width: 60px;
     height: 60px;
 
@@ -14,7 +15,7 @@ const LoaderContainer = styled.div`
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background: black;
+        background: blue;
         animation-timing-function: cubic-bezier(0, 1, 1, 0);
 
         &:nth-child(1) {

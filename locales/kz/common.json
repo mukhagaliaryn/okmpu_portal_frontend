@@ -53,5 +53,12 @@
         "is_register": "Аккаунта жоқ па ?",
         "enter": "Кіру",
         "back": "Артқа"
+    },
+
+
+    "header": {
+        "register": "Тіркелу",
+        "login": "Кіру",
+        "logout-title": "Шығу"
     }
 }

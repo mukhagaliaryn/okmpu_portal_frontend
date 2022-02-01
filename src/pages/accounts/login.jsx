@@ -6,26 +6,10 @@ import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router'
 import { check_auth_status, login } from '../../actions/auth';
-import Loader from '../../components/Loader';
-
 import useTranslation from 'next-translate/useTranslation'
 
-
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
-
-const schema = yup.object().shape({
-    username: yup.string()
-        .min(3, "Минимум 3 символа")
-        .max(32, "Максимум 32 символов")
-        .matches(
-            /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/, 
-            "Введите правильные имя пользователя")
-        .required('Требуется имя пользователя'),
-    password: yup.string()
-        .required('Необходим пароль')
-        .min(6, 'Пароль должен состоять из 6 или более символов'),
-});
+import { LockClosedIcon } from '@heroicons/react/solid'
+import Loader from '../../components/Loader';
 
 const Login = () => {
     const router = useRouter()
@@ -34,7 +18,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const { t } = useTranslation();
 
-    const { register, formState:{ errors }, handleSubmit } = useForm({ resolver: yupResolver(schema) });
+    const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
         if (dispatch && dispatch !== null && dispatch !== undefined) {
@@ -54,36 +38,74 @@ const Login = () => {
         router.push(localStorage.getItem("currentPage"));
 
     return (
-        <React.Fragment>
-            <Layout title="Авторизация | OKMPU" content="Авторизация">
-            <div className="accounts-container">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <h4>{t("common:accounts.login.h4")}</h4>
-                    <div className="form-group">
-                        <label htmlFor="">{t("common:accounts.login.form.username.label")}</label>
-                        <input type="text" className={errors["username"] && "warning"} {...register("username")} placeholder={t("common:accounts.login.form.username.placeholder")} minLength="3" maxLength="32"/>
-                        {errors["username"] ? <p>{errors["username"].message}</p>: null}
+        <Layout title="Авторизация | OKMPU" content="Авторизация">
+            <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-md w-full space-y-8">
+                    <div>
+                        <div className="text-center ml-auto mr-auto w-200">
+                            <Image
+                                className="mx-auto h-12 w-auto"
+                                src="/logo_black.png"
+                                width={300}
+                                height={56}
+                                alt="Workflow"
+                            />
+                        </div>
+                        <h2 className="mt-6 text-center text-2xl font-extrabold text-gray-900">{t("common:accounts.login.h4")}</h2>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="">{t("common:accounts.login.form.password.label")}</label>
-                        <input type="password" className={errors["password"] && "warning"} {...register("password")} placeholder={t("common:accounts.login.form.password.placeholder")} />
-                        {errors["password"] ? <p>{errors["password"].message}</p>: null}
-                    </div>
-                    <div className="submit">
-                        <span></span>
-                        {loading ? <Loader />: <input type="submit" value={t("common:accounts.enter")} />}
-                    </div>
-                </form>
-                <div className="register-block">
-                    <h4>{t("common:accounts.is_register")}</h4>
-                    <Link href="/accounts/register">
-                        <a>{t("common:accounts.register.form.submit")}</a>
-                    </Link>
+                    <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
+                        <input type="hidden" name="remember" defaultValue="true" />
+                        <div className="rounded-md shadow-sm -space-y-px">
+                            <div>
+                            <label htmlFor="username" className="sr-only">
+                                {t("common:accounts.login.form.username.label")}
+                            </label>
+                            <input
+                                {...register("username")}
+                                id="username"
+                                type="text"
+                                required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                placeholder={t("common:accounts.login.form.username.placeholder")} 
+                                minLength={3} 
+                                maxLength={32}
+                            />
+                            </div>
+                            <div>
+                            <label htmlFor="password" className="sr-only">
+                                {t("common:accounts.login.form.password.label")}
+                            </label>
+                            <input
+                                {...register("password")}
+                                id="password"
+                                type="password"
+                                autoComplete="current-password"
+                                required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                placeholder={t("common:accounts.login.form.password.placeholder")}
+                            />
+                            </div>
+                        </div>
+                        {loading ? <Loader />:
+                        <div>
+                            <button
+                            type="submit"
+                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            >
+                            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+                                <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
+                            </span>
+                            Кіру
+                            </button>
+                        </div>}
+                        <div className='mt-30 text-center'>
+                            <Link href="/accounts/register"><a className="text-current text-sm">Регистрация</a></Link>
+                        </div>
+                    </form>
                 </div>
             </div>
-            </Layout>
-        </React.Fragment>
-    ) 
+        </Layout>
+    )
 }
 
 export default Login;
