@@ -43,18 +43,15 @@ const ArticleList = ({articles}) => {
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Рөлі
-                    </th>
-                    <th scope="col" className="relative px-6 py-3">
-                      <span className="sr-only">Edit</span>
+                      Импорт
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                     {articles.map((article) => (
                     <tr key={article.title}>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">{article.title}</div>
+                        <td className="px-6 py-4 whitespace-wrap">
+                          <div className="text-sm text-gray-900" title={article.title}>{article.title}</div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="text-sm text-gray-900">{article.direction}</div>
@@ -64,9 +61,8 @@ const ArticleList = ({articles}) => {
                               Қол жетімді
                           </span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{article.role}</td>
                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="#" className="text-indigo-600 hover:text-indigo-900">
+                          <a href={article.files} className="text-indigo-600 hover:text-indigo-900">
                               Жүктеу
                           </a>
                         </td>

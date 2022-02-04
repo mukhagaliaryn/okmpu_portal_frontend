@@ -12,7 +12,7 @@ const Profile = ({profile}) => {
         >
             <div className="bg-white shadow overflow-hidden sm:rounded-lg">
                 <div className="px-4 py-5 sm:px-6">
-                <h3 className="text-lg leading-6 font-medium text-gray-900">{profile.user.full_name} туралы ақпарат</h3>
+                <h3 className="text-3xl font-extrabold tracking-tight text-gray-900">{profile.user.full_name} туралы ақпарат</h3>
                 <p className="mt-1 max-w-2xl text-sm text-gray-500">Жеке мәліметтер.</p>
                 </div>
                 <div className="border-t border-gray-200">

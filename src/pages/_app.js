@@ -1,4 +1,5 @@
 import '../styles/global.css';
+import '../styles/components/alert.css';
 import NextNprogress from 'nextjs-progressbar';
 import { Provider } from 'react-redux';
 import { useStore } from '../store';

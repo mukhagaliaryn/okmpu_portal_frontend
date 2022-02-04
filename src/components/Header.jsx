@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { PlusCircleIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 
 function classNames(...classes) {
@@ -19,9 +19,10 @@ function classNames(...classes) {
 const Header = () => {
     const navigation = [
         { name: 'Басты бет', href: '/', current: true },
-        // { name: 'Team', href: '#', current: false },
-        // { name: 'Projects', href: '#', current: false },
-        // { name: 'Calendar', href: '#', current: false },
+        { name: 'Ресми сайт', href: 'https://okmpu.kz/kk', current: false },
+        { name: 'Жаңалықтар', href: 'https://okmpu.kz/kk/news', current: false },
+        { name: 'Біз жайлы', href: 'https://okmpu.kz/kk/node/1503', current: false },
+        { name: 'Хабарландыру', href: 'https://okmpu.kz/kk/ads', current: false },
     ]
     const { t } = useTranslation();
 
@@ -83,11 +84,12 @@ const Header = () => {
                     {isAuthenticated &&
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                         <button
-                        type="button"
-                        className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                            onClick={() => router.push('/article')}
+                            type="button"
+                            className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                         >
                             <span className="sr-only">View notifications</span>
-                            <BellIcon className="h-6 w-6" aria-hidden="true" />
+                            <PlusCircleIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
 
                         {/* Profile dropdown */}
@@ -125,12 +127,11 @@ const Header = () => {
                                 </Menu.Item>
                                 <Menu.Item>
                                     {({ active }) => (
-                                    <a
-                                        href="#"
-                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                    <Link
+                                        href="http://univer.okmpu.kz/user/login?ReturnUrl=%2f"
                                     >
-                                        Баптаулар
-                                    </a>
+                                        <a className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>UNIVER 2.0</a>
+                                    </Link>
                                     )}
                                 </Menu.Item>
                                 <Menu.Item>
