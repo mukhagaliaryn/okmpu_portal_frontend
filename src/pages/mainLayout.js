@@ -19,18 +19,9 @@ function classNames(...classes) {
 
 const MainLayout = ({children}) => {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-    const router = useRouter();
-    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
-    const user = useSelector(state => state.auth.user);
-
-
-    if(typeof window !== 'undefined' && !isAuthenticated) {
-        router.push('/accounts/login')
-    }
 
     return (
         <Layout>
-            {isAuthenticated && (user !== null && user.status !=="Студент") ?
             <div className="bg-white">
                 <div>
                     <MobileNavbar mobileFiltersOpen={mobileFiltersOpen} setMobileFiltersOpen={setMobileFiltersOpen} />
@@ -107,7 +98,7 @@ const MainLayout = ({children}) => {
                         </section>
                     </main>
                 </div>
-            </div>: <h1 className="text-center text-xl">Администрациялық бөлімге жүгініңіз!</h1>}
+            </div>
         </Layout>
     )
 }
