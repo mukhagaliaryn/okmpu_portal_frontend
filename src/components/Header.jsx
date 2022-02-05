@@ -18,11 +18,11 @@ function classNames(...classes) {
 
 const Header = () => {
     const navigation = [
-        { name: 'Басты бет', href: '/', current: true },
-        { name: 'Ресми сайт', href: 'https://okmpu.kz/kk', current: false },
-        { name: 'Жаңалықтар', href: 'https://okmpu.kz/kk/news', current: false },
-        { name: 'Біз жайлы', href: 'https://okmpu.kz/kk/node/1503', current: false },
-        { name: 'Хабарландыру', href: 'https://okmpu.kz/kk/ads', current: false },
+        { name: 'Басты бет', href: '/', current: true, target: false },
+        { name: 'Ресми сайт', href: 'https://okmpu.kz/kk', current: false, target: true },
+        { name: 'Жаңалықтар', href: 'https://okmpu.kz/kk/news', current: false, target: true },
+        { name: 'Біз жайлы', href: 'https://okmpu.kz/kk/node/1503', current: false, target: true },
+        { name: 'Хабарландыру', href: 'https://okmpu.kz/kk/ads', current: false, target: true },
     ]
     const { t } = useTranslation();
 
@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <Disclosure as="nav" className="bg-gray-800 sticky w-full top-0 z-50">
-      {({ open }) => (
+        {({ open }) => (
         <>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-16">
@@ -71,6 +71,8 @@ const Header = () => {
                                         'px-3 py-2 rounded-md text-sm font-medium'
                                         )}
                                         aria-current={item.current ? 'page' : undefined}
+                                        target={item.target ? "_blank" : "_self"}
+                                        rel="noopener noreferrer"
                                     >
                                         {item.name}
                                     </a>
@@ -146,28 +148,30 @@ const Header = () => {
                 </div>
             </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item, i) => (
-                <Disclosure.Button
-                  key={i}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
+            <Disclosure.Panel className="sm:hidden">
+                <div className="px-2 pt-2 pb-3 space-y-1">
+                    {navigation.map((item, i) => (
+                    <Disclosure.Button
+                        key={i}
+                        as="a"
+                        target={item.target ? "_blank" : "_self"}
+                        rel="noopener noreferrer"
+                        href={item.href}
+                        className={classNames(
+                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'block px-3 py-2 rounded-md text-base font-medium'
+                        )}
+                        aria-current={item.current ? 'page' : undefined}
+                    >
+                        {item.name}
+                    </Disclosure.Button>
+                    ))}
+                </div>
+            </Disclosure.Panel>
         </>
-      )}
+        )}
     </Disclosure>
-  )
+    )
 }
 
 export default Header;
