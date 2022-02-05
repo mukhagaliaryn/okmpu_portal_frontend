@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
         }
     }
     
-    const res = await fetch(`${BACKEND_URL}/`, context.req.cookies.access && config)
+    const res = await fetch(`${BACKEND_URL}`, context.req.cookies.access && config)
     const data = await res.json();
     const articles = data.articles || [];
 
