@@ -28,5 +28,5 @@ export const PASSWORD_RESET_CONFIRM_SUCCESS = 'PASSWORD_RESET_CONFIRM_SUCCESS';
 // export const DEVELOPMENT = "DEVELOPMENT";
 export const DEVELOPMENT = "PRODUCTION"; 
 // Backend URLs
-export const BACKEND_URL = 'http://127.0.0.1:8000';
+export const BACKEND_URL = 'http://127.0.0.1:8000/';
 // export const BACKEND_URL = 'https://abaygroup.pythonanywhere.com/';
