@@ -46,7 +46,7 @@ const Register = () => {
             .notOneOf(emailList, 'Электронная почта уже существует')
             .required('Электронная почта требуется')
             .max(32, "Максимум 32 символов"),
-        profile_name: yup.string()
+        full_name: yup.string()
             .required('Имя требуется')
             .max(32, "Максимум 32 символов"),
         phone: yup.string()
