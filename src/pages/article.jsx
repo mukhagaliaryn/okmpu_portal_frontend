@@ -216,7 +216,7 @@ export default function Article({access}) {
               <div className="border-t border-gray-200" />
             </div>
           </div>
-        </>: <h1 className="text-center text-xl">Администрациялық бөлімге жүгініңіз!</h1>}
+        </>: <h1 className="text-center mt-20 text-xl font-bold">Администрациялық бөлімге жүгініңіз!</h1>}
       </Layout>
     )
 }

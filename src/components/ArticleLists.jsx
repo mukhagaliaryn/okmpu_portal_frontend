@@ -54,7 +54,7 @@ const ArticleList = ({articles, access}) => {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                  {articles && articles.map((article, i) => {
+                  {articles.map((article, i) => {
                     const date = new Date(article.date_created)
                     return (
                       <tr key={i}>
