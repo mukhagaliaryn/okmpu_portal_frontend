@@ -9,13 +9,18 @@
 .alert-container .alert {
     max-width: 100%;
     padding: 10px;
-    background-color: green;
     backdrop-filter: blur(10px);
-    border-radius: 5px;
     box-shadow: 0 5px 10px rgb(0 0 0 / 12%);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.success {
+    background-color: green;
+}
+.error {
+    background-color: red;
 }
 
 .alert-container .alert i {

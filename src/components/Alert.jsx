@@ -15,13 +15,12 @@ const Alert = () => {
     return (
         <div className='alert-container'>
             {alerts !== null && alerts.length > 0 && alerts.map(alert => (
-                <motion.div key={alert.id} className='alert'    
+                <motion.div key={alert.id} className={`alert ${alert.alertType === "success" ? "success" : "error"}`}    
                     initial="hidden" 
                     animate="visible" 
                     variants={item} 
                     transition={{duration: .5, repeat: 1, repeatDelay: 3, repeatType: "reverse",}}
                 >
-                    {alert.alertType === "success" ? <i className="fas fa-check-circle"></i> : <i className="fas fa-exclamation-circle"></i>}
                     <small>{ alert.msg }</small>
                 </motion.div>
             ))}
