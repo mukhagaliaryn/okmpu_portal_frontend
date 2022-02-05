@@ -2,6 +2,7 @@ import { XIcon } from '@heroicons/react/outline';
 import { Dialog, Disclosure, Transition } from '@headlessui/react';
 import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/solid';
 import { Fragment } from 'react';
+import Link from 'next/link';
 
 const subCategories = [
     { name: 'Басты бет', href: '/' },
@@ -54,7 +55,7 @@ const MobileNavbar = ({mobileFiltersOpen, setMobileFiltersOpen}) => {
         <Fragment>
             {/* Диалоговое окно мобильного фильтра */}
             <Transition.Root show={mobileFiltersOpen} as={Fragment}>
-                <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" onClose={setMobileFiltersOpen}>
+                <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" style={{marginTop: "64px"}} onClose={setMobileFiltersOpen}>
                     <Transition.Child
                         as={Fragment}
                         enter="transition-opacity ease-linear duration-300"
@@ -95,9 +96,9 @@ const MobileNavbar = ({mobileFiltersOpen, setMobileFiltersOpen}) => {
                             <ul role="list" className="font-medium text-gray-900 px-2 py-3">
                             {subCategories.map((category, i) => (
                                 <li key={i}>
-                                <a href={category.href} className="block px-2 py-3">
-                                    {category.name}
-                                </a>
+                                    <Link href={category.href}>
+                                        <a className="block px-2 py-3">{category.name}</a>
+                                    </Link>
                                 </li>
                             ))}
                             </ul>
