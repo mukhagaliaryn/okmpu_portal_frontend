@@ -35,7 +35,7 @@ const Login = () => {
 
 
     if (typeof window !== "undefined" && isAuthenticated)
-        router.push(localStorage.getItem("currentPage"));
+        router.push('/');
 
     return (
         <Layout title="Авторизация | OKMPU" content="Авторизация">
