@@ -13,21 +13,23 @@ const Index = ({articles, access}) => {
 }
 
 export async function getServerSideProps(context) {
+    const access = context.req.cookies.access ?? false
+
     const config = {
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `JWT ${context.req.cookies.access}`
+            "Authorization": `JWT ${access}`
         }
     }
     
-    const res = await fetch(`${BACKEND_URL}/`, context.req.cookies.access && config)
+    const res = await fetch(`${BACKEND_URL}/`, access && config)
     const data = await res.json();
     const articles = data.articles || [];
 
     return {
         props: {
             articles,
-            access: context.req.cookies.access || null
+            access
         }
     }
 }
