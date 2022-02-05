@@ -62,13 +62,13 @@ const ArticleList = ({articles, access}) => {
                           <div className="text-sm text-gray-900 line-clamp-3" title={article.title}>{article.title}</div>
                         </td>
                         <td className="px-6 py-4 max-w-xs">
-                          <div className="text-sm text-gray-900">{article.direction}</div>
-                          <div className="text-sm text-gray-500">{article.sub_direction}</div>
+                          <div className="text-sm text-gray-900 line-clamp-2">{article.direction}</div>
+                          <div className="text-sm text-gray-500 line-clamp-2">{article.sub_direction}</div>
                         </td>
                         <td className="px-6 py-4">
-                          <div className="text-sm text-gray-500">{`${date.getDay()}-${date.getMonth()}-${date.getFullYear()}`}</div>
-                          <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                              Қол жетімді
+                          <div className="text-sm text-center text-gray-500">{`${date.getDay()}-${date.getMonth()}-${date.getFullYear()}ж`}</div>
+                          <span className="px-2 text-center inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            @{article.owner.username}
                           </span>
                         </td>
                         <td className="px-6 py-4 text-right text-sm font-medium">
