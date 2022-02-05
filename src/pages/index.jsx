@@ -27,7 +27,7 @@ export async function getServerSideProps(context) {
     return {
         props: {
             articles,
-            access: context.req.cookies.access
+            access: context.req.cookies.access || null
         }
     }
 }
