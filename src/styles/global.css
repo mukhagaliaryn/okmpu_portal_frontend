@@ -34,3 +34,11 @@
     max-width: 1280px;
     margin: 20px auto;
 }
+
+
+@media screen and (max-width: 506px) {
+    .user-status {
+        display: none;
+    }
+    
+}

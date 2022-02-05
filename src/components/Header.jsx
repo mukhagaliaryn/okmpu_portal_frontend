@@ -93,7 +93,7 @@ const Header = () => {
                             <PlusCircleIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
 
-                        <div className="text-gray-300 text-xs pl-5"><i className="fas fa-circle"></i> {user !== null && user.status}</div>
+                        <div className="user-status text-gray-300 text-xs pl-5"><i className="fas fa-circle"></i> {user !== null && user.status}</div>
 
                         {/* Profile dropdown */}
                         <Menu as="div" className="ml-3 relative">
