@@ -18,29 +18,30 @@ const Main = ({articles, access}) => {
         <Fragment>
             {isAuthenticated &&
             <MainLayout>
-                <ArticleList articles={articles} access={access} />
+                <h1 className="text-center text-3xl font-bold">Main Page</h1>
+                {/* <ArticleList articles={articles} access={access} /> */}
             </MainLayout>}
         </Fragment>
     )
 }
 
-export async function getServerSideProps(context) {
-    const config = {
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `JWT ${context.req.cookies.access}`
-        }
-    }
-    const res = await fetch(`${BACKEND_URL}/`, context.req.cookies.access && config)
-    const data = await res.json();
-    const articles = data.articles || null;
+// export async function getServerSideProps(context) {
+//     const config = {
+//         headers: {
+//             "Content-Type": "application/json",
+//             "Authorization": `JWT ${context.req.cookies.access}`
+//         }
+//     }
+//     const res = await fetch(`${BACKEND_URL}/`, context.req.cookies.access && config)
+//     const data = await res.json();
+//     const articles = data.articles || null;
 
-    return {
-        props: {
-            articles,
-            access: context.req.cookies.access || false
-        }
-    }
-}
+//     return {
+//         props: {
+//             articles,
+//             access: context.req.cookies.access || false
+//         }
+//     }
+// }
 
 export default Main;
