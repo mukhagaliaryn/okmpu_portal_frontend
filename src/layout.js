@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import { check_auth_status } from './actions/auth';
 import Header from './components/Header';
@@ -32,7 +32,7 @@ const Layout = (props) => {
                     {props.children}
                 </div>
                 
-                <nav className="i18next">
+                {/* <nav className="i18next">
                     {router.locales.map(locale => (
                         <Link href={router.asPath} locale={locale} key={locale}>
                             <a>
@@ -40,7 +40,7 @@ const Layout = (props) => {
                             </a>
                         </Link>
                     ))}
-                </nav>
+                </nav> */}
             </div>
 
         </React.Fragment>

@@ -94,8 +94,8 @@ const MobileNavbar = ({mobileFiltersOpen, setMobileFiltersOpen}) => {
                         <form className="mt-4 border-t border-gray-200">
                             <h3 className="sr-only">Категориялар</h3>
                             <ul role="list" className="font-medium text-gray-900 px-2 py-3">
-                            {subCategories.map((category) => (
-                                <li key={category.name}>
+                            {subCategories.map((category, i) => (
+                                <li key={i}>
                                 <a href={category.href} className="block px-2 py-3">
                                     {category.name}
                                 </a>
@@ -103,8 +103,8 @@ const MobileNavbar = ({mobileFiltersOpen, setMobileFiltersOpen}) => {
                             ))}
                             </ul>
 
-                            {filters.map((section) => (
-                            <Disclosure as="div" key={section.id} className="border-t border-gray-200 px-4 py-6">
+                            {filters.map((section, i) => (
+                            <Disclosure as="div" key={i} className="border-t border-gray-200 px-4 py-6">
                                 {({ open }) => (
                                 <>
                                     <h3 className="-mx-2 -my-3 flow-root">
@@ -122,7 +122,7 @@ const MobileNavbar = ({mobileFiltersOpen, setMobileFiltersOpen}) => {
                                     <Disclosure.Panel className="pt-6">
                                     <div className="space-y-6">
                                         {section.options.map((option, optionIdx) => (
-                                        <div key={option.value} className="flex items-center">
+                                        <div key={optionIdx} className="flex items-center">
                                             <input
                                             id={`filter-mobile-${section.id}-${optionIdx}`}
                                             name={`${section.id}[]`}

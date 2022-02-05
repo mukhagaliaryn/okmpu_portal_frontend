@@ -39,7 +39,7 @@ const Header = () => {
     }
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-gray-800 sticky w-full top-0 z-50">
       {({ open }) => (
         <>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -58,15 +58,14 @@ const Header = () => {
                     </div>}
                     <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex-shrink-0 flex items-center">
-                            <Link href="/"><a style={{width: "120px"}}><Image src="/logo.png" width={1092} height={211} /></a></Link>
+                            <Link href="/"><a style={{width: "120px"}}><Image src="/logo.png" width={1092} height={211} alt=""/></a></Link>
                         </div>
                         {isAuthenticated && 
                         <div className="hidden sm:block sm:ml-6">
                             <div className="flex space-x-4">
-                            {navigation.map((item) => (
-                                <Link href={item.href}>
+                            {navigation.map((item, i) => (
+                                <Link href={item.href} key={i}>
                                     <a
-                                        key={item.name}
                                         className={classNames(
                                         item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                         'px-3 py-2 rounded-md text-sm font-medium'
@@ -102,6 +101,7 @@ const Header = () => {
                                         src="data:image/png;base64,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"
                                         width={64}
                                         height={64}
+                                        alt=""
                                     />
                                 </div>
                                 </Menu.Button>
@@ -148,9 +148,9 @@ const Header = () => {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
+              {navigation.map((item, i) => (
                 <Disclosure.Button
-                  key={item.name}
+                  key={i}
                   as="a"
                   href={item.href}
                   className={classNames(

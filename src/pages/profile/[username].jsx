@@ -1,15 +1,25 @@
 import { PaperClipIcon } from '@heroicons/react/solid'
 import Layout from '../../layout';
 import { BACKEND_URL } from '../../actions/types';
+import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 
 
 const Profile = ({profile}) => {
+    const router = useRouter();
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    
+    if(typeof window !== 'undefined' && !isAuthenticated) {
+        router.push('/accounts/login')
+    }
+
     return (
         <Layout
             title={profile !== null && `${profile.user.username} | Профиль`}
             content="Профиль беті"
             header={profile !== null && profile.user.full_name}
         >
+            {isAuthenticated &&
             <div className="bg-white shadow overflow-hidden sm:rounded-lg">
                 <div className="px-4 py-5 sm:px-6">
                 <h3 className="text-3xl font-extrabold tracking-tight text-gray-900">{profile.user.full_name} туралы ақпарат</h3>
@@ -80,7 +90,7 @@ const Profile = ({profile}) => {
                         </div>
                     </dl>
                 </div>
-            </div>
+            </div>}
         </Layout>
     )
 }

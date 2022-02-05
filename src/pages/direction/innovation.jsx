@@ -1,10 +1,9 @@
-import MainLayout from "./mainLayout"
-import ArticleList from "../components/ArticleLists";
+import { BACKEND_URL } from "../../actions/types"
+import MainLayout from "../mainLayout"
+import ArticleList from "../../components/ArticleLists";
 
 
-import { BACKEND_URL } from "../actions/types";
-
-const Index = ({articles, access}) => {
+const Innovation = ({articles, access}) => {
     return (
         <MainLayout>
             <ArticleList articles={articles} access={access} />
@@ -20,7 +19,7 @@ export async function getServerSideProps(context) {
         }
     }
     
-    const res = await fetch(`${BACKEND_URL}/`, context.req.cookies.access && config)
+    const res = await fetch(`${BACKEND_URL}/innovation/`, context.req.cookies.access && config)
     const data = await res.json();
     const articles = data.articles || [];
 
@@ -32,4 +31,4 @@ export async function getServerSideProps(context) {
     }
 }
 
-export default Index;
+export default Innovation;
