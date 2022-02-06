@@ -47,15 +47,15 @@ const DIR_CHOICES = [
         value: "Цифрлық ресурстар",
         ACADEMY_SECOND: [
           {
-            key: "ACADEMY_FIRST_FIRST",
+            key: "ACADEMY_SECOND_FIRST",
             value: "Онлайн курстар (МООК платформасына енгізу, Университет платформасына енгізу)"
           },
           {
-            key: "ACADEMY_FIRST_SECOND",
+            key: "ACADEMY_SECOND_SECOND",
             value: "Бейне лекция (1 пән үшін толық қамтылған)"
           },
           {
-            key: "ACADEMY_FIRST_THIRD",
+            key: "ACADEMY_SECOND_THIRD",
             value: "Электронды оқулық, оқу құралы"
           },
         ]
@@ -65,11 +65,11 @@ const DIR_CHOICES = [
         value: "Оқытушы –профессор құрамының академиялық ұтқырлық бағдарламасы бойынша дәрістер оқуы",
         ACADEMY_THIRD: [
           {
-            key: "ACADEMY_FIRST_FIRST",
+            key: "ACADEMY_THIRD_FIRST",
             value: "Академиялық ұтқырлық бағдарламасы бойынша ОПҚ –ның  шетелдік ЖОО-да дәріс оқуы"
           },
           {
-            key: "ACADEMY_FIRST_SECOND",
+            key: "ACADEMY_THIRD_SECOND",
             value: "Академиялық ұтқырлық бағдарламасы бойынша ОПҚ –ның   ҚР ЖОО-да дәріс оқуы"
           },
         ]
@@ -79,15 +79,15 @@ const DIR_CHOICES = [
         value: "Тілдік курстар (IELTS, TOEFL IBT, CELTA)",
         ACADEMY_FOURTH: [
           {
-            key: "ACADEMY_FIRST_FIRST",
+            key: "ACADEMY_FOURTH_FIRST",
             value: "- 6,0 баллдан жоғары"
           },
           {
-            key: "ACADEMY_FIRST_SECOND",
+            key: "ACADEMY_FOURTH_SECOND",
             value: "- TOEFL IBT (173-196)"
           },
           {
-            key: "ACADEMY_FIRST_THIRD",
+            key: "ACADEMY_FOURTH_THIRD",
             value: "CELTA профильдік кафедра үшін"
           },
         ]
@@ -97,11 +97,11 @@ const DIR_CHOICES = [
         value: "Оқытушы–профессор құрамының біліктілігін арттыру",
         ACADEMY_FIVETH: [
           {
-            key: "ACADEMY_FIRST_FIRST",
+            key: "ACADEMY_FIVETH_FIRST",
             value: "Кемінде 72 сағат пәндік біліктілікті арттырудан өту сертификаттары (екеуден артық емес)"
           },
           {
-            key: "ACADEMY_FIRST_SECOND",
+            key: "ACADEMY_FIVETH_SECOND",
             value: "Coursera, EdX, Udacity, FutureLearn  онлайн курстары платформалары базасында ағымдық  жылдағы кәсіби қызметі бойынша шет тіліндегі жаппай ашық онлайн курстар платформасы базасы бойынша оқудан өту сертификаттары (толық курс аяқталған жағдайда)"
           },
         ]
@@ -111,7 +111,7 @@ const DIR_CHOICES = [
         value: "Кеңестер мен комиссиялардың жұмысына қатысу",
         ACADEMY_SIXTH: [
           {
-            key: "ACADEMY_FIRST_FIRST",
+            key: "ACADEMY_SIXTH_FIRST",
             value: "ҚР БҒжМ бұйрығымен бекітілген: сараптық топ мүшелері, РОӘК мүшесі, Республикалық, облыстық ресми жұмыс тобының мүшелері"
           },
         ]
