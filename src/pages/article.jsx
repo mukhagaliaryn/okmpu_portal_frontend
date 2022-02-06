@@ -123,27 +123,31 @@ const DIR_CHOICES = [
     value: "Ғылыми бағыт",
     INNOVATION: [
       {
+        key: "UNDEFINED", 
+        value: "Белгісіз",
+      },
+      {
         key: "INN_FIRST", 
         value: "Республикалық, халықаралақ жобалар",
         INN_FIRST: [
           {
-            key: "FIRST", 
+            key: "INN_FIRST_FIRST", 
             value: "ERASMUS+, HORIZON, т.б. жетекшілік жасау,орындаушысы.",
           },
           {
-            key: "SECOND", 
+            key: "INN_FIRST_SECOND", 
             value: "ҚР БжҒМ ҒК бағдарламалық-нысаналы қаржыландыру бойынша жобаларға: жетекшілік жасау, орындаушысы.",
           },
           {
-            key: "THIRD", 
+            key: "INN_FIRST_THIRD", 
             value: "ҚР БжҒМ ҒК гранттық қаржыландыру бойынша жобаларға: жетекшілік жасау, орындаушысы.",
           },
           {
-            key: "FOURTH", 
+            key: "INN_FIRST_FOURTH", 
             value: "Стартап жобаларға: жетекшілік жасау, орындаушысы.",
           },
           {
-            key: "FIVETH", 
+            key: "INN_FIRST_FIVETH", 
             value: "Оқу процесіне ғылыми-зерттеу немесе инновациялық жұмыстардың нәтижелерін енгізу (жоба нәтижелері, монография  және РОӘК оқулық)",
           },
         ]
@@ -153,11 +157,11 @@ const DIR_CHOICES = [
         value: "Жарияланымдар",
         INN_SECOND: [
           {
-            key: "FIRST", 
+            key: "INN_SECOND_FIRST", 
             value: "Clarivate Analytics, Scopus базаларындағы кітаптар, монографиялар, кітап тараулары",
           },
           {
-            key: "SECOND", 
+            key: "INN_SECOND_SECOND", 
             value: "Монографиялар ОҚМПУ-нің ғылыми кеңесі шешімімен бекітілген",
           },
         ]
@@ -167,19 +171,19 @@ const DIR_CHOICES = [
         value: "Clarivate Analytics, Scopus мақалалар",
         INN_THIRD: [
           {
-            key: "FIRST", 
+            key: "INN_THIRD_FIRST", 
             value: "1 Quartile (Квартиль)  (процентиль 99-76%)",
           },
           {
-            key: "SECOND", 
+            key: "INN_THIRD_SECOND", 
             value: "2 Quartile (Квартиль)  (процентиль 75-51%)",
           },
           {
-            key: "THIRD", 
+            key: "INN_THIRD_THIRD", 
             value: "3 Quartile (Квартиль) (процентиль 50-25%)",
           },
           {
-            key: "FOURTH", 
+            key: "INN_THIRD_FOURTH", 
             value: "4 Quartile (Квартиль) (процентиль 24-1%)",
           },
         ]
@@ -189,7 +193,7 @@ const DIR_CHOICES = [
         value: "Әлемдік рейтингтік базалардағы Хирш (h) индексі",
         INN_FOURTH: [
           {
-            key: "FIRST", 
+            key: "INN_FOURTH_FIRST", 
             value: "Хирш индексінің болуы: h≥3  тең немесе кем емес, h<3  дейін",
           },
         ]
@@ -199,11 +203,11 @@ const DIR_CHOICES = [
         value: "Ғылыми басылымдар мен журналдарда мақалалар жариялау",
         INN_FIVETH: [
           {
-            key: "FIRST", 
+            key: "INN_FIVETH_FIRST", 
             value: "ҚР БжҒМ Комитеті  ұсынған  тізім бойынша отандық  басылымдар",
           },
           {
-            key: "SECOND",
+            key: "INN_FIVETH_SECOND",
             value: "«ОҚМПУ Хабаршысы»",
           },
         ]
@@ -213,11 +217,11 @@ const DIR_CHOICES = [
         value: "Конференция материалдарының жинағындағы мақалалардың жариялануы",
         INN_SIXTH: [
           {
-            key: "FIRST", 
+            key: "INN_SIXTH_FIRST", 
             value: "Clarivate Analytics және Scopus базаларында индекстелетін конференция материалдар",
           },
           {
-            key: "SECOND", 
+            key: "INN_SIXTH_SECOND", 
             value: "Халықаралық, республикалық конференциялар (үшеуден артық емес)",
           },
         ]
@@ -227,19 +231,19 @@ const DIR_CHOICES = [
         value: "Ғылыми конференцияларда және пәндік олимпиадаларда жүлделі орын алған студенттердің жетекшілік, Халықаралық және ұлттық деңгейде нәтижеге жеткен өнер саңлақтары мен спортшыларға жетекшілік (ҚР салалық министрлігімен бекітілген ресми тізімі бойынша)",
         INN_SEVENTH: [
           {
-            key: "FIRST",
+            key: "INN_SEVENTH_FIRST",
             value: "Халықаралық",
           },
           {
-            key: "SECOND", 
+            key: "INN_SEVENTH_SECOND", 
             value: "Республикалық",
           },
           {
-            key: "THIRD", 
+            key: "INN_SEVENTH_THIRD", 
             value: "Олимпиада жүлдегері (спорттық)",
           },
           {
-            key: "FOURTH", 
+            key: "INN_SEVENTH_FOURTH", 
             value: "Облыстық  (екеуден артық емес)",
           },
         ]
@@ -249,19 +253,19 @@ const DIR_CHOICES = [
         value: "Патенттер және алдыңғы патенттер,иновациялық патенттер, авторлық туындылар (өнертабыстарды), зияткерлік меншік обьектісінің мемлекеттік тіркелуінің болуы",
         INN_EIGHTH: [
           {
-            key: "FIRST",
+            key: "INN_EIGHTH_FIRST",
             value: "PCT жүйесі бойынша халықаралық патент (Patent Cooperation Treaty)"
           },
           {
-            key: "SECOND",
+            key: "INN_EIGHTH_SECOND",
             value: "Еуразиялық патент (ТМД елдері деңгейінде тіркелген)"
           },
           {
-            key: "THIRD",
+            key: "INN_EIGHTH_THIRD",
             value: "Республикалық патент"
           },
           {
-            key: "FOURTH",
+            key: "INN_EIGHTH_FOURTH",
             value: "Авторлық куәлігі"
           },
         ]
@@ -271,15 +275,15 @@ const DIR_CHOICES = [
         value: "Жетістіктер мен марапаттар",
         INN_NINETH: [
           {
-            key: "FIRST",
+            key: "INN_NINETH_FIRST",
             value: "Мемлекеттік сыйлықтар, стипендиялар"
           },
           {
-            key: "SECOND",
+            key: "INN_NINETH_SECOND",
             value: "Мемлекеттік төсбелгілер"
           },
           {
-            key: "THIRD",
+            key: "INN_NINETH_THIRD",
             value: "ҚР «ЖОО Үздік оқытушысы», «Үздік ғалым»  байқауының жеңімпазы"
           },
         ]
@@ -289,27 +293,27 @@ const DIR_CHOICES = [
         value: "Ғылыми атақ алу  (ҚР БҒМ, БҒСБК-ККСОН диплом алған жағдайда)",
         INN_TENTH: [
           {
-            key: "FIRST",
+            key: "INN_TENTH_FIRST",
             value: "Ұлттық  Ғылым академиясы: Академик"
           },
           {
-            key: "SECOND",
+            key: "INN_TENTH_SECOND",
             value: "Ұлттық  Ғылым академиясы: корреспондент-мүшесі"
           },
           {
-            key: "THIRD",
+            key: "INN_TENTH_THIRD",
             value: "Профессор"
           },
           {
-            key: "FOURTH",
+            key: "INN_TENTH_FOURTH",
             value: "Қауымдастырылған профессор (доцент)"
           },
           {
-            key: "FIVETH",
+            key: "INN_TENTH_FIVETH",
             value: "Clarivate Analytics және Scopus базасындағы журналдарда редакция алқасының құрамында болуы"
           },
           {
-            key: "SIXTH",
+            key: "INN_TENTH_SIXTH",
             value: "РһD доктор жетекшілік (қорғап, бекітілген жағдайда)"
           },
         ]
@@ -322,11 +326,15 @@ const DIR_CHOICES = [
     value: "Тәрбие және рухани жаңғыру бағыты",
     EDU: [
       {
+        key: "UNDEFINED", 
+        value: "Белгісіз",
+      },
+      {
         key: "EDU_FIRST", 
         value: "Факультет бойынша сала жауаптылар (Оқу-әдістемелік жұмыс, ҒЗЖ және СҒЗЖ, Кәсіптік бағдар жұмыстары, Практика бойынша, СМЖ, Халықаралық қатынастар бойынша, аға куратор, куратор және т.б.)",
         EDU_FIRST: [
           {
-            key: "FIRST",
+            key: "EDU_FIRST_FIRST",
             value: "Факультет бойынша сала жауаптылар (Оқу-әдістемелік жұмыс, ҒЗЖ және СҒЗЖ, Кәсіптік бағдар жұмыстары, Практика бойынша, СМЖ, Халықаралық қатынастар бойынша, аға куратор, куратор және т.б.)"
           },
         ]
@@ -336,11 +344,11 @@ const DIR_CHOICES = [
         value: "Ғылыми атақ алу  (ҚР БҒМ, БҒСБК-ККСОН диплом алған жағдайда)",
         EDU_SECOND: [
           {
-            key: "FIRST",
+            key: "EDU_SECOND_FIRST",
             value: "Халықаралық БАҚ, әлеуметтік желілердегі жарияланымдар"
           },
           {
-            key: "SECOND",
+            key: "EDU_SECOND_SECOND",
             value: "Республикалық, облыстық, қалалық  БАҚ, әлеуметтік желілердегі жарияланымдар"
           },
         ]
@@ -350,15 +358,15 @@ const DIR_CHOICES = [
         value: "ОҚМПУ имиджін көтеру, білім, тәрбие саласында бұқаралық ақпарат құралдарында жарияланған материалдар",
         EDU_THIRD: [
           {
-            key: "FIRST",
+            key: "EDU_THIRD_FIRST",
             value: "Халықаралық"
           },
           {
-            key: "SECOND",
+            key: "EDU_THIRD_SECOND",
             value: "Республикалық"
           },
           {
-            key: "SECOND",
+            key: "EDU_THIRD_SECOND",
             value: "Республикалық"
           },
         ]
@@ -368,11 +376,11 @@ const DIR_CHOICES = [
         value: "«Рухани жаңғыру» бағдарламасы аясында атқарылған іс-шаралар",
         EDU_FOURTH: [
           {
-            key: "FIRST",
+            key: "EDU_FOURTH_FIRST",
             value: "Ғылыми жетекші"
           },
           {
-            key: "SECOND",
+            key: "EDU_FOURTH_SECOND",
             value: "Жауапты орындаушы"
           },
         ]
@@ -382,7 +390,7 @@ const DIR_CHOICES = [
         value: "«Рухани жаңғыру» бағдарламасын ілгерілету үшін жобалар, бағдарламалар дайындау (қаржыландырылатын немесе жеке бастама)",
         EDU_FIVETH: [
           {
-            key: "FIRST",
+            key: "EDU_FIVETH_FIRST",
             value: "Қазақстанның 100 жаңа есімі"
           },
         ]
@@ -392,7 +400,7 @@ const DIR_CHOICES = [
         value: "«Қазақстандағы 100 жаңа есім»  жобасының жеңімпаздары",
         EDU_FIVETH: [
           {
-            key: "FIRST",
+            key: "EDU_SIXTH_FIRST",
             value: "Қазақстанның 100 жаңа есімі"
           },
         ]
@@ -404,19 +412,23 @@ const DIR_CHOICES = [
     value: "Кафедра үшін",
     FOR_CAFEDRA: [
       {
+        key: "UNDEFINED", 
+        value: "Белгісіз",
+      },
+      {
         key: "CAF_FIRST",
         value: "Реестрге тіркелген білім беру бағдарламалары",
         CAF_FIRST: [
           {
-            key: "FIRST",
+            key: "CAF_FIRST_FIRST",
             value: "Инновациялық БББ"
           },
           {
-            key: "SECOND",
+            key: "CAF_FIRST_SECOND",
             value: "Бірлескен БББ"
           },
           {
-            key: "THIRD",
+            key: "CAF_FIRST_THIRD",
             value: "Қосдипломды"
           },
         ]
@@ -426,15 +438,15 @@ const DIR_CHOICES = [
         value: "Университетті бітірушілердің жұмысқа орналасу деңгейі",
         CAF_SECOND: [
           {
-            key: "FIRST",
+            key: "CAF_SECOND_FIRST",
             value: "70-80 % аралығында"
           },
           {
-            key: "SECOND",
+            key: "CAF_SECOND_SECOND",
             value: "81-90 % аралығында"
           },
           {
-            key: "THIRD",
+            key: "CAF_SECOND_THIRD",
             value: "90% -дан  жоғары"
           },
         ]
@@ -444,7 +456,7 @@ const DIR_CHOICES = [
         value: "Шет елдерден келіп университетте дәріс беріп қайтқан оқытушы-профессорлар",
         CAF_THIRD: [
           {
-            key: "FIRST",
+            key: "CAF_THIRD_FIRST",
             value: "Шет елдерден келіп университетте дәріс беріп қайтқан оқытушы-профессорлар"
           },
         ]
@@ -454,15 +466,15 @@ const DIR_CHOICES = [
         value: "Ғылыми дәрежелі оқытушы-профессорлардың жалпы үлесі",
         CAF_FOURTH: [
           {
-            key: "FIRST",
+            key: "CAF_FOURTH_FIRST",
             value: "50-55 аралығында"
           },
           {
-            key: "SECOND",
+            key: "CAF_FOURTH_SECOND",
             value: "56-75 аралығында"
           },
           {
-            key: "THIRD",
+            key: "CAF_FOURTH_THIRD",
             value: "75-тен жоғары"
           },
         ]
@@ -472,7 +484,7 @@ const DIR_CHOICES = [
         value: "Білім беру бағдарламалары бойынша рейтингте алғашқы үштікке кірген БББ (рейтингке кемінде 1-5 ЖББҰ қатысқан жағдайда)",
         CAF_FOURTH: [
           {
-            key: "FIRST",
+            key: "CAF_FIVETH_FIRST",
             value: "Білім беру бағдарламалары бойынша рейтингте алғашқы үштікке кірген БББ (рейтингке кемінде 1-5 ЖББҰ қатысқан жағдайда)"
           },
         ]
