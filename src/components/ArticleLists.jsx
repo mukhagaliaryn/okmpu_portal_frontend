@@ -60,6 +60,7 @@ const ArticleList = ({articles, access}) => {
                       <tr key={i}>
                         <td className="px-6 py-4 max-w-xs">
                           <div className="text-sm text-gray-900 line-clamp-3" title={article.title}>{article.title}</div>
+                          <div className="text-sm text-gray-500 line-clamp-3" title={article.title_subdir}>{article.title_subdir}</div>
                         </td>
                         <td className="px-6 py-4 max-w-xs">
                           <div className="text-sm text-gray-900 line-clamp-2">{article.direction}</div>
