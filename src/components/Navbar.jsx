@@ -1,9 +1,6 @@
 import Link from "next/link"
 import { useRouter } from 'next/router';
 import { useSelector } from "react-redux";
-import CafedraPanel from "./statues/for_cafedra";
-import DecanatPanel from "./statues/for_decanat";
-import ReactorPanel from "./statues/for_reactor";
 
 const subCategories = [
     { name: 'Басты бет', href: '/' },
