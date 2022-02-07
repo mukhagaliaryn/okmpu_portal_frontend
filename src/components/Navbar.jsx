@@ -28,16 +28,37 @@ const Navbar = () => {
                 </li>
                 ))}
             </ul>
-
-            {user !== null && user.status === "Oқытушы" ?
-                null
-            : user.status === "Кафедра" ?
-                <CafedraPanel />
-            : user.status === "Деканат" ?
-                <DecanatPanel />
-            : user.status === "Ректорат" ?
-                <ReactorPanel />
-            : null}
+            
+            <div className="border-b border-gray-200 py-6">
+                {user !== null && user.status === "Oқытушы" ?
+                    null
+                : user.status === "Кафедра" ?
+                    <Link href="/user/teachers">
+                        <a className="block text-sm font-medium text-gray-900 space-y-4 pb-6">Оқытушылар</a>
+                    </Link>
+                : user.status === "Деканат" ?
+                    <>
+                        <Link href="/user/cafedra">
+                            <a className="block text-sm font-medium text-gray-900 space-y-4 pb-3">Кафедра</a>
+                        </Link>
+                        <Link href="/user/teachers">
+                            <a className="block text-sm font-medium text-gray-900 space-y-4 pb-3">Оқытушылар</a>
+                        </Link>
+                    </>
+                : user.status === "Ректорат" ?
+                    <>
+                        <Link href="/user/decanat">
+                            <a className="block text-sm font-medium text-gray-900 space-y-4 pb-3">Деканат</a>
+                        </Link>
+                        <Link href="/user/cafedra">
+                            <a className="block text-sm font-medium text-gray-900 space-y-4 pb-3">Кафедра</a>
+                        </Link>
+                        <Link href="/user/teachers">
+                            <a className="block text-sm font-medium text-gray-900 space-y-4 pb-3">Оқытушылар</a>
+                        </Link>
+                    </>
+                : null}
+            </div>
         </form>
     )
 }
