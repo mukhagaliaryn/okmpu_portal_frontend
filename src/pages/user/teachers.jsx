@@ -89,13 +89,17 @@ export async function getServerSideProps(context) {
             "Authorization": `JWT ${context.req.cookies.access}`
         }
     }
-    const res = await fetch(`${BACKEND_URL}/user/teachers/`, context.req.cookies.access && config)
+    const res = await fetch(`${BACKEND_URL}/users/`, context.req.cookies.access && config)
     const data = await res.json();
     const teachers = data.teachers;
+    const cafedra = data.cafedra;
+    const decanat = data.decanat;
 
     return {
         props: {
             teachers,
+            cafedra,
+            decanat,
             access: context.req.cookies.access || false
         }
     }
