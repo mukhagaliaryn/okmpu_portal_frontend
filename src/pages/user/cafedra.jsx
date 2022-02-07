@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BACKEND_URL } from "../../actions/types";
 import MainLayout from "../mainLayout";
 
