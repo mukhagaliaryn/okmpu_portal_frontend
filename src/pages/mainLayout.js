@@ -17,7 +17,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-const MainLayout = ({children}) => {
+const MainLayout = ({children, title}) => {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
     const router = useRouter();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
@@ -37,7 +37,7 @@ const MainLayout = ({children}) => {
 
                     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="relative z-10 flex items-baseline justify-between pt-0 pb-6 border-b border-gray-200">
-                            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">Интикативтік жоспарлар</h1>
+                            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">{title || "Интикативтік жоспарлар"}</h1>
 
                             <div className="flex items-center">
                                 <Menu as="div" className="relative inline-block text-left">

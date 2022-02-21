@@ -48,7 +48,7 @@ const Cafedra = ({cafedra}) => {
                                 <td className="px-6 py-4 whitespace-nowrap">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0 h-10 w-10">
-                                    <img className="h-10 w-10 rounded-full" src={person.avatar} alt="" />
+                                    <img className="h-10 w-10 rounded-full" src={person.avatar ? person.avatar : "/avatar.png"} alt="" />
                                     </div>
                                     <div className="ml-4">
                                     <div className="text-sm font-medium text-gray-900">{person.user.full_name}</div>
@@ -67,7 +67,7 @@ const Cafedra = ({cafedra}) => {
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.user.status}</td>
                                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <Link href={`/profile/${encodeURIComponent(person.user.username)}`}>
+                                    <Link href={`/${encodeURIComponent(person.user.username)}`}>
                                         <a className="text-indigo-600 hover:text-indigo-900">
                                             Кіру
                                         </a>
@@ -96,13 +96,11 @@ export async function getServerSideProps(context) {
     const data = await res.json();
     const teachers = data.teachers;
     const cafedra = data.cafedra;
-    const decanat = data.decanat;
 
     return {
         props: {
             teachers,
             cafedra,
-            decanat,
             access: context.req.cookies.access || false
         }
     }

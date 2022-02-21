@@ -32,25 +32,27 @@ const Profile = ({profile}) => {
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">@{profile.user.username}</dd>
                         </div>
                         <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt className="text-sm font-medium text-gray-500">Толық аты</dt>
+                            <dt className="text-sm font-medium text-gray-500">{profile.user.status === 'Оқытушы' ? "Толық аты" : "Атауы"}</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{profile.user.full_name}</dd>
                         </div>
                         <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt className="text-sm font-medium text-gray-500">Мамандығы</dt>
+                            <dt className="text-sm font-medium text-gray-500">{profile.user.status === 'Оқытушы' ? "Мамандығы" : "Статус"}</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{profile.user.status}</dd>
                         </div>
                         <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-medium text-gray-500">Email поштасы</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{profile.user.email}</dd>
                         </div>
+                        {profile.user.status === 'Оқытушы' &&
                         <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-medium text-gray-500">Туылған күні</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{profile.user.birthday}</dd>
-                        </div>
+                        </div>}
+                        {profile.user.status === 'Оқытушы' &&
                         <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-medium text-gray-500">Жынысы</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{profile.user.gender}</dd>
-                        </div>
+                        </div>}
                         <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-medium text-gray-500">Телефон</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{profile.user.phone}</dd>

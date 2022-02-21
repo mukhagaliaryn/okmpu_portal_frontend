@@ -84,6 +84,7 @@ const Header = () => {
                     </div>
                     {isAuthenticated &&
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        {user !== null && user.status === 'Оқытушы' &&
                         <button
                             onClick={() => router.push('/article')}
                             type="button"
@@ -91,7 +92,7 @@ const Header = () => {
                         >
                             <span className="sr-only">View notifications</span>
                             <PlusCircleIcon className="h-6 w-6" aria-hidden="true" />
-                        </button>
+                        </button>}
 
                         <div className="user-status text-gray-300 text-xs pl-5"><i className="fas fa-circle"></i> {user !== null && user.status}</div>
 
